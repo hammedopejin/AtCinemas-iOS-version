@@ -20,6 +20,7 @@
 		0F5CD9A122AD9DAA00D91D06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9A022AD9DAA00D91D06 /* Constants.swift */; };
 		0F5CD9A322ADB21D00D91D06 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9A222ADB21D00D91D06 /* Trailer.swift */; };
 		0F5CD9A522ADB6A900D91D06 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9A422ADB6A900D91D06 /* Review.swift */; };
+		0F5CD9A722ADF34900D91D06 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9A622ADF34900D91D06 /* DownloadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0F5CD9A022AD9DAA00D91D06 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0F5CD9A222ADB21D00D91D06 /* Trailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
 		0F5CD9A422ADB6A900D91D06 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		0F5CD9A622ADF34900D91D06 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				0F5CD99C22AD86C600D91D06 /* MovieAPI.swift */,
 				0F5CD99E22AD8D9600D91D06 /* MovieService.swift */,
+				0F5CD9A622ADF34900D91D06 /* DownloadManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5CD99F22AD8D9600D91D06 /* MovieService.swift in Sources */,
+				0F5CD9A722ADF34900D91D06 /* DownloadManager.swift in Sources */,
 				0F5CD97322ACB8D300D91D06 /* ViewController.swift in Sources */,
 				0F5CD9A522ADB6A900D91D06 /* Review.swift in Sources */,
 				0F5CD97922ACB8D300D91D06 /* AtCinemas_iOS.xcdatamodeld in Sources */,
