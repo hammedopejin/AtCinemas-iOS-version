@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0sg-Dy-AoQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movies-->
+        <scene sceneID="22a-Sq-F13">
+            <objects>
+                <viewController id="zkA-fk-MNk" customClass="MovieViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yk6-Ws-Vvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cGQ-FE-0rK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qW3-6w-CTP">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dj2-vf-orY" firstAttribute="bottom" secondItem="cGQ-FE-0rK" secondAttribute="bottom" id="gyJ-ok-uKb"/>
+                            <constraint firstItem="Dj2-vf-orY" firstAttribute="trailing" secondItem="cGQ-FE-0rK" secondAttribute="trailing" id="o3d-Ir-pZd"/>
+                            <constraint firstItem="cGQ-FE-0rK" firstAttribute="top" secondItem="Dj2-vf-orY" secondAttribute="top" id="pV7-F8-gtM"/>
+                            <constraint firstItem="cGQ-FE-0rK" firstAttribute="leading" secondItem="Dj2-vf-orY" secondAttribute="leading" id="u0G-M2-UUW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dj2-vf-orY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Movies" id="auL-8H-W34"/>
+                    <navigationItem key="navigationItem" id="wCd-OI-QcI"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="movieCollectionView" destination="cGQ-FE-0rK" id="8T9-HO-2xx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IdB-4n-i2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983.20000000000005" y="38.23088455772114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YLr-iz-w49">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sg-Dy-AoQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NXF-uG-Tf1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zkA-fk-MNk" kind="relationship" relationship="rootViewController" id="nZ5-tU-8RI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rD3-yW-h12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="38.839285714285715"/>
+        </scene>
+    </scenes>
+</document>
