@@ -15,6 +15,8 @@ struct Constants {
         case nowPlaying
         case popular
         case topRated
+        case AtCinemas
+        case CoreMovie
     } 
     
 }
