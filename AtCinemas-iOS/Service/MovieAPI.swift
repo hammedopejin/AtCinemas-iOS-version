@@ -19,18 +19,21 @@ struct MovieAPI {
     static let movieTrailers = "/videos"
     static let movieReviews = "/reviews"
     
-    static let apiKey = "?api_key=f16d0ec2539e84fb28f16aa91f86f0a2"
+    static let thumbnailURL = "https://image.tmdb.org/t/p/w500/"
     
-    static func getNowPlayingUrl() -> String {
-        return base + nowPlaying + apiKey
+    static let apiKey = "&api_key=f16d0ec2539e84fb28f16aa91f86f0a2"
+    static let pageNo = "?page="
+    
+    static func getNowPlayingUrl(page: Int) -> String {
+        return base + nowPlaying + pageNo + "\(page)" + apiKey
     }
     
-    static func getPopularUrl() -> String {
-        return base + popular + apiKey
+    static func getPopularUrl(page: Int) -> String {
+        return base + popular + pageNo + "\(page)" + apiKey
     }
     
-    static func getTopRatedUrl() -> String {
-        return base + topRated + apiKey
+    static func getTopRatedUrl(page: Int) -> String {
+        return base + topRated + pageNo + "\(page)" + apiKey
     }
     
     static func getMovieTrailerUrl(_ movieID: String) -> String {
@@ -39,6 +42,10 @@ struct MovieAPI {
     
     static func getMovieReviewUrl(_ movieID: String) -> String {
         return base + movieID + movieReviews + apiKey
+    }
+    
+    static func getThumbnailUrl(_ path: String) -> String {
+        return thumbnailURL + path
     }
     
 }

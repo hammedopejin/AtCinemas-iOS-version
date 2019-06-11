@@ -15,6 +15,10 @@ protocol MovieViewModelDelegate: class {
 class MovieViewModel {
     
     weak var delegate: MovieViewModelDelegate?
+    private var isRequesting = false
+    private var lastRequestedPage = 0
+    var filteredMovies = [Movie]()
+    var currentMovie: Movie!
     
     var movies = [Movie]() {
         didSet {
@@ -22,16 +26,30 @@ class MovieViewModel {
         }
     }
     
-    func getNowPlayingMovies() {
+    //MARK: Service
+    func requestMoreData(by: String) {
+        if isRequesting || lastRequestedPage >= 40 {
+            return
+        }
         
-        movieService.get(movies: Constants.Keys.nowPlaying.rawValue) {[unowned self] movies, err in
+        isRequesting =  true
+        lastRequestedPage += 1
+        
+        movieService.get(movies: Constants.Keys.nowPlaying.rawValue, page: lastRequestedPage) {[unowned self] movies, err in
             
             if let error = err {
-                   print("Error getting movies: \(error.localizedDescription)")
+                print("Error getting movies: \(error.localizedDescription)")
+                self.isRequesting = false
                 return
             }
-            self.movies = movies
+            print("No of movies returned \(movies.count)")
+            
+            self.isRequesting = false
+            self.movies.append(contentsOf: movies)
+            print("Total No of movies: \(self.movies.count)")
             
         }
+        
     }
+    
 }

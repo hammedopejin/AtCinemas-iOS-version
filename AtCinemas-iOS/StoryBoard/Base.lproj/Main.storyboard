@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="now-Bo-aAi">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,8 +19,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="eQJ-DX-Oj0" kind="relationship" relationship="viewControllers" id="KS0-nD-4b3"/>
-                        <segue destination="xcP-GQ-Yqr" kind="relationship" relationship="viewControllers" id="3IZ-fU-Bbt"/>
+                        <segue destination="zev-AC-Y3I" kind="relationship" relationship="viewControllers" id="hZP-hI-YR7"/>
+                        <segue destination="uLw-rm-BQY" kind="relationship" relationship="viewControllers" id="sfv-0q-8vk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnE-nz-CM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,24 +28,24 @@
             <point key="canvasLocation" x="-110" y="-295"/>
         </scene>
         <!--Movies-->
-        <scene sceneID="Z8a-mT-YAv">
+        <scene sceneID="0f2-n9-3QC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Movies" id="eQJ-DX-Oj0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" id="8TZ-0l-DKj"/>
+                <viewControllerPlaceholder storyboardName="Movies" id="zev-AC-Y3I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movies" id="uS4-h5-kYk"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vBf-5v-vJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YV3-ZY-ekR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357" y="127"/>
+            <point key="canvasLocation" x="-279" y="110"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="G7P-dF-vQf">
+        <scene sceneID="1ak-RM-7lf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="xcP-GQ-Yqr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="rAZ-mC-t64"/>
+                <viewControllerPlaceholder storyboardName="Settings" id="uLw-rm-BQY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="lFP-Kw-MPK"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eLt-aD-lvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1F9-t8-1cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="127"/>
+            <point key="canvasLocation" x="25" y="110"/>
         </scene>
     </scenes>
 </document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0sg-Dy-AoQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="64z-NK-rrX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Movies-->
         <scene sceneID="22a-Sq-F13">
             <objects>
-                <viewController id="zkA-fk-MNk" customClass="MovieViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieViewController" id="zkA-fk-MNk" customClass="MovieViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yk6-Ws-Vvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dj2-vf-orY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movies" id="auL-8H-W34"/>
+                    <tabBarItem key="tabBarItem" title="Movies" id="P5G-tv-YdV"/>
                     <navigationItem key="navigationItem" id="wCd-OI-QcI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -48,25 +48,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdB-4n-i2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983.20000000000005" y="38.23088455772114"/>
+            <point key="canvasLocation" x="1922.4000000000001" y="38.23088455772114"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="YLr-iz-w49">
+        <!--Movies-->
+        <scene sceneID="fIk-7w-N2k">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sg-Dy-AoQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="64z-NK-rrX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Movies" id="auL-8H-W34"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NXF-uG-Tf1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Mc-lR-Dvk">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zkA-fk-MNk" kind="relationship" relationship="rootViewController" id="nZ5-tU-8RI"/>
+                        <segue destination="zkA-fk-MNk" kind="relationship" relationship="rootViewController" id="ZfK-7n-W9a"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rD3-yW-h12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egV-Zy-wG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73.913043478260875" y="38.839285714285715"/>
+            <point key="canvasLocation" x="1127" y="38"/>
         </scene>
     </scenes>
 </document>

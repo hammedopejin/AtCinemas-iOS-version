@@ -9,11 +9,7 @@
 import Foundation
 
 struct ReviewResults: Decodable {
-    let results: ReviewInfo
-}
-
-struct ReviewInfo: Decodable {
-    let reviews: [Review]
+    let results: [Review]
 }
 
 class Review: Decodable {

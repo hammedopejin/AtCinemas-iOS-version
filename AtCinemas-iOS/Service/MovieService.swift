@@ -30,19 +30,19 @@ final class MovieService {
     }()
     
     //MARK: movies
-    func get(movies by: String, completion: @escaping MovieHandler) {
+    func get(movies by: String, page: Int, completion: @escaping MovieHandler) {
         
         var urlString = String()
         
         switch by {
         case Constants.Keys.nowPlaying.rawValue:
-            urlString = MovieAPI.getNowPlayingUrl()
+            urlString = MovieAPI.getNowPlayingUrl(page: page)
             break
         case Constants.Keys.popular.rawValue:
-            urlString = MovieAPI.getPopularUrl()
+            urlString = MovieAPI.getPopularUrl(page: page)
             break
         default:
-            urlString = MovieAPI.getTopRatedUrl()
+            urlString = MovieAPI.getTopRatedUrl(page: page)
             break
         }
         
@@ -61,14 +61,14 @@ final class MovieService {
             if let data = dat {
                 do {
                     let response = try JSONDecoder().decode(MovieResults.self, from: data)
-                    let movies = response.results.movies
+                    let movies = response.results
                     completion(movies, nil)
                 } catch let error {
                     completion([], error)
                 }
             }
             
-        }
+        }.resume()
         
     }
     
@@ -92,13 +92,13 @@ final class MovieService {
             if let data = dat {
                 do {
                     let response = try JSONDecoder().decode(TrailerResults.self, from: data)
-                    let trailers = response.results.trailers
+                    let trailers = response.results
                     completion(trailers, nil)
                 } catch let error {
                     completion([], error)
                 }
             }
-        }
+        }.resume()
     }
     
     //MARK: reviews
@@ -121,13 +121,13 @@ final class MovieService {
             if let data = dat {
                 do {
                     let response = try JSONDecoder().decode(ReviewResults.self, from: data)
-                    let reviews = response.results.reviews
+                    let reviews = response.results
                     completion(reviews, nil)
                 } catch let error {
                     completion([], error)
                 }
             }
-        }
+        }.resume()
     }
     
 }

@@ -9,11 +9,7 @@
 import Foundation
 
 struct TrailerResults: Decodable {
-    let results: TrailerInfo
-}
-
-struct TrailerInfo: Decodable {
-    let trailers: [Trailer]
+    let results: [Trailer]
 }
 
 class Trailer: Decodable {

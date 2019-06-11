@@ -12,30 +12,66 @@ class MovieViewController: UIViewController {
 
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
+    let movieViewModel = MovieViewModel()
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        setupCollectionView()
+        createSearch()
+        movieViewModel.requestMoreData(by: Constants.Keys.nowPlaying.rawValue)
     }
     
     func setupCollectionView() {
-        movieCollectionView.register(UINib(nibName: MovieCollectionCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionCell.identifier)
+        movieCollectionView.register(UINib(nibName: MovieCollectionCell.identifier, bundle: Bundle.main), forCellWithReuseIdentifier: MovieCollectionCell.identifier)
         movieCollectionView.delegate = self
         movieCollectionView.dataSource = self
+        movieViewModel.delegate = self
+        definesPresentationContext = true
     }
+    
+    func createSearch() {
+        
+        searchController.dimsBackgroundDuringPresentation =  false
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.placeholder = "Search for Movie..."
+    }
+    
+    //MARK: Helper func
+    func isFiltering() -> Bool {
+        
+        let isEmpty = searchController.searchBar.text!.isEmpty
+        return !isEmpty && searchController.isActive
+    }
+    
+    func filterMovies(by search: String) {
+        
+        movieViewModel.filteredMovies = movieViewModel.movies.filter({$0.title.lowercased().contains(search.lowercased())})
+        
+        movieCollectionView.reloadData()
+    }
+    
 }
 
 extension MovieViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return isFiltering() ? movieViewModel.filteredMovies.count : movieViewModel.movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionCell.identifier, for: indexPath) as! MovieCollectionCell
         
+        let movies = isFiltering() ? movieViewModel.filteredMovies : movieViewModel.movies
+        let movie = movies[indexPath.row]
+        cell.configure(movie: movie)
+        
+        if indexPath.row > (movies.count - 5) {
+            movieViewModel.requestMoreData(by: Constants.Keys.nowPlaying.rawValue)
+        }
         
         return cell
     }
@@ -56,10 +92,42 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
             numberOfCell = 3.3
         }
         let width = UIScreen.main.bounds.size.width / numberOfCell
-        return .init(width: width, height: 128)
+        return .init(width: width, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        if UIScreen.main.bounds.size.width > 500 {
+            return .init(top: 10, left: 30, bottom: 10, right: 30)
+        }else{
+            return .init(top: 10, left: 2, bottom: 10, right: 2)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        self.navigationItem.searchController?.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MovieViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let search = searchController.searchBar.text else {
+            return
+        }
+        
+        filterMovies(by: search)
+    }
+}
+
+extension MovieViewController: MovieViewModelDelegate {
+    
+    func updateView() {
+        
+        DispatchQueue.main.async {
+            self.movieCollectionView.reloadData()
+        }
     }
 }

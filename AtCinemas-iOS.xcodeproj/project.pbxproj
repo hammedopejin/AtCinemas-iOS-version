@@ -26,6 +26,7 @@
 		0F5CD9B122AED75800D91D06 /* MovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CD9B022AED75800D91D06 /* MovieCollectionCell.xib */; };
 		0F5CD9B322AED79D00D91D06 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9B222AED79D00D91D06 /* MovieCollectionCell.swift */; };
 		0F5CD9B522AEE9EF00D91D06 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9B422AEE9EF00D91D06 /* MovieViewModel.swift */; };
+		0F5CD9B722AF0C5400D91D06 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9B622AF0C5400D91D06 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		0F5CD9B022AED75800D91D06 /* MovieCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionCell.xib; sourceTree = "<group>"; };
 		0F5CD9B222AED79D00D91D06 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
 		0F5CD9B422AEE9EF00D91D06 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		0F5CD9B622AF0C5400D91D06 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,6 @@
 		0F5CD96F22ACB8D300D91D06 /* AtCinemas-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0F5CD97022ACB8D300D91D06 /* AppDelegate.swift */,
 				0F5CD99422AD6C8900D91D06 /* Model */,
 				0F5CD99322AD6C7D00D91D06 /* View */,
 				0F5CD99822AD6EA800D91D06 /* ViewModel */,
@@ -112,6 +113,7 @@
 				0F5CD99722AD6CB800D91D06 /* Extensions */,
 				0F5CD99922AD6F1400D91D06 /* Utility */,
 				0F5CD97F22ACB8D400D91D06 /* Info.plist */,
+				0F5CD97022ACB8D300D91D06 /* AppDelegate.swift */,
 			);
 			path = "AtCinemas-iOS";
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD97222ACB8D300D91D06 /* MovieViewController.swift */,
+				0F5CD9B622AF0C5400D91D06 /* SettingsViewController.swift */,
 				0F5CD9B222AED79D00D91D06 /* MovieCollectionCell.swift */,
 				0F5CD9B022AED75800D91D06 /* MovieCollectionCell.xib */,
 				0F5CD97A22ACB8D400D91D06 /* Assets.xcassets */,
@@ -152,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD97422ACB8D300D91D06 /* Main.storyboard */,
-				0F5CD9A822AEB88200D91D06 /* Settings.storyboard */,
 				0F5CD9AA22AEC3FC00D91D06 /* Movies.storyboard */,
+				0F5CD9A822AEB88200D91D06 /* Settings.storyboard */,
 				0F5CD97C22ACB8D400D91D06 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
@@ -305,6 +308,7 @@
 				0F5CD99B22AD6FD400D91D06 /* Movie.swift in Sources */,
 				0F5CD9A122AD9DAA00D91D06 /* Constants.swift in Sources */,
 				0F5CD97122ACB8D300D91D06 /* AppDelegate.swift in Sources */,
+				0F5CD9B722AF0C5400D91D06 /* SettingsViewController.swift in Sources */,
 				0F5CD99D22AD86C600D91D06 /* MovieAPI.swift in Sources */,
 				0F5CD9B522AEE9EF00D91D06 /* MovieViewModel.swift in Sources */,
 			);
