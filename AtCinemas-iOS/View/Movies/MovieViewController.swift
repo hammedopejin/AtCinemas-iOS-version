@@ -14,13 +14,28 @@ class MovieViewController: UIViewController {
     
     let movieViewModel = MovieViewModel()
     let searchController = UISearchController(searchResultsController: nil)
+    var by = Constants.Keys.nowPlaying.rawValue
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         createSearch()
-        movieViewModel.requestMoreData(by: Constants.Keys.nowPlaying.rawValue)
+        movieViewModel.requestMoreData(by: by, flag: true)
+    }
+    
+    @IBAction func toggleSegmentedControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            by = Constants.Keys.nowPlaying.rawValue
+            movieViewModel.requestMoreData(by: by, flag: true)
+        case 1:
+            by = Constants.Keys.popular.rawValue
+            movieViewModel.requestMoreData(by: by, flag: true)
+        default:
+            by = Constants.Keys.topRated.rawValue
+            movieViewModel.requestMoreData(by: by, flag: true)
+        }
     }
     
     func setupCollectionView() {
@@ -71,7 +86,7 @@ extension MovieViewController: UICollectionViewDataSource {
         cell.configure(movie: movie)
         
         if indexPath.row > (movies.count - 5) {
-            movieViewModel.requestMoreData(by: Constants.Keys.nowPlaying.rawValue)
+            movieViewModel.requestMoreData(by: by, flag: false)
         }
         
         return cell
@@ -118,6 +133,18 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
         detailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if (kind == UICollectionView.elementKindSectionHeader) {
+            let headerView: UICollectionReusableView =  collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MovieCollectionViewHeader", for: indexPath)
+            
+            return headerView
+        }
+        
+        return UICollectionReusableView()
+        
     }
 }
 

@@ -23,11 +23,33 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qW3-6w-CTP">
                                     <size key="itemSize" width="150" height="150"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MovieCollectionViewHeader" id="jdD-1N-Xzt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5PC-nB-Iwn">
+                                            <rect key="frame" x="8" y="8" width="359" height="29"/>
+                                            <segments>
+                                                <segment title="Now Playing"/>
+                                                <segment title="Most Popular"/>
+                                                <segment title="Top Rated"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="toggleSegmentedControl:" destination="zkA-fk-MNk" eventType="valueChanged" id="4Bp-4y-nf4"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="5PC-nB-Iwn" secondAttribute="trailing" constant="8" id="UUI-v5-iXV"/>
+                                        <constraint firstItem="5PC-nB-Iwn" firstAttribute="top" secondItem="jdD-1N-Xzt" secondAttribute="top" constant="8" id="dr7-cL-1dj"/>
+                                        <constraint firstItem="5PC-nB-Iwn" firstAttribute="leading" secondItem="jdD-1N-Xzt" secondAttribute="leading" constant="8" id="maO-Jo-yfM"/>
+                                    </constraints>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

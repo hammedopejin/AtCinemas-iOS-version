@@ -39,15 +39,20 @@ class MovieViewModel {
     }
     
     //MARK: Service
-    func requestMoreData(by: String) {
+    func requestMoreData(by: String, flag: Bool) {
+        
         if isRequesting || lastRequestedPage >= 40 {
             return
         }
         
         isRequesting =  true
-        lastRequestedPage += 1
+        if flag {
+            lastRequestedPage = 1
+        } else {
+            lastRequestedPage += 1
+        }
         
-        movieService.get(movies: Constants.Keys.nowPlaying.rawValue, page: lastRequestedPage) {[unowned self] movies, err in
+        movieService.get(movies: by, page: lastRequestedPage) {[unowned self] movies, err in
             
             if let error = err {
                 print("Error getting movies: \(error.localizedDescription)")
@@ -57,7 +62,12 @@ class MovieViewModel {
             print("No of movies returned \(movies.count)")
             
             self.isRequesting = false
-            self.movies.append(contentsOf: movies)
+            if flag {
+                self.movies = movies
+            } else {
+                self.movies.append(contentsOf: movies)
+            }
+            
             print("Total No of movies: \(self.movies.count)")
             
         }
