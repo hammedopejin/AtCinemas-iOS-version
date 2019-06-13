@@ -17,11 +17,34 @@
                     <view key="view" contentMode="scaleToFill" id="UKN-zP-RHv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gjS-Jf-8qd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7aa-Iy-ItI">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gjS-Jf-8qd" firstAttribute="top" secondItem="Ttq-lg-17t" secondAttribute="top" id="0Q4-J1-ARU"/>
+                            <constraint firstItem="Ttq-lg-17t" firstAttribute="trailing" secondItem="gjS-Jf-8qd" secondAttribute="trailing" id="1fW-o9-38u"/>
+                            <constraint firstItem="gjS-Jf-8qd" firstAttribute="leading" secondItem="Ttq-lg-17t" secondAttribute="leading" id="5VG-Kz-ha4"/>
+                            <constraint firstItem="Ttq-lg-17t" firstAttribute="bottom" secondItem="gjS-Jf-8qd" secondAttribute="bottom" id="nzV-sw-OEO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ttq-lg-17t"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="TkS-GI-aXd"/>
                     <navigationItem key="navigationItem" id="z1L-tw-Yrt"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="favoriteCollectionView" destination="gjS-Jf-8qd" id="AmM-S7-W82"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Pq-pD-d80" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

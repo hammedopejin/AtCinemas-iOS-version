@@ -11,12 +11,24 @@ import Foundation
 
 struct Constants {
     
+    
+    enum Movie: String {
+            case CoreMovie
+            case id
+            case title
+            case overview
+            case imageUrl
+            case rating
+            case releaseDate
+    }
+        
+  
+    
     enum Keys: String {
         case nowPlaying
         case popular
         case topRated
-        case AtCinemas
-        case CoreMovie
+        case AtCinemas = "AtCinemas_iOS"
     } 
     
 }

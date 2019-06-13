@@ -34,6 +34,9 @@
 		0F5CD9C622B0991800D91D06 /* TrailerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9C522B0991800D91D06 /* TrailerCollectionCell.swift */; };
 		0F5CD9C822B0A29500D91D06 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9C722B0A29500D91D06 /* Notification+Name.swift */; };
 		0F5CD9CA22B1B7DF00D91D06 /* ReviewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9C922B1B7DF00D91D06 /* ReviewCollectionCell.swift */; };
+		0F5CD9CC22B1E4FF00D91D06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9CB22B1E4FF00D91D06 /* Utils.swift */; };
+		0F5CD9CE22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9CD22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift */; };
+		0F5CD9D122B2097B00D91D06 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D022B2097B00D91D06 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		0F5CD9C522B0991800D91D06 /* TrailerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerCollectionCell.swift; sourceTree = "<group>"; };
 		0F5CD9C722B0A29500D91D06 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		0F5CD9C922B1B7DF00D91D06 /* ReviewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionCell.swift; sourceTree = "<group>"; };
+		0F5CD9CB22B1E4FF00D91D06 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0F5CD9CD22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesViewModel.swift; sourceTree = "<group>"; };
+		0F5CD9D022B2097B00D91D06 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 			children = (
 				0F5CD97A22ACB8D400D91D06 /* Assets.xcassets */,
 				0F5CD9BE22B03BB700D91D06 /* Settings */,
+				0F5CD9CF22B2093900D91D06 /* web */,
 				0F5CD9BD22B03B9B00D91D06 /* Favorites */,
 				0F5CD9BC22B03B9000D91D06 /* Movies */,
 			);
@@ -199,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD9B422AEE9EF00D91D06 /* MovieViewModel.swift */,
+				0F5CD9CD22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 		0F5CD99922AD6F1400D91D06 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				0F5CD9CB22B1E4FF00D91D06 /* Utils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -237,6 +246,14 @@
 				0F5CD9B622AF0C5400D91D06 /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		0F5CD9CF22B2093900D91D06 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				0F5CD9D022B2097B00D91D06 /* WebViewController.swift */,
+			);
+			path = web;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5CD9C822B0A29500D91D06 /* Notification+Name.swift in Sources */,
+				0F5CD9D122B2097B00D91D06 /* WebViewController.swift in Sources */,
 				0F5CD9B322AED79D00D91D06 /* MovieCollectionCell.swift in Sources */,
 				0F5CD9C622B0991800D91D06 /* TrailerCollectionCell.swift in Sources */,
 				0F5CD99F22AD8D9600D91D06 /* MovieService.swift in Sources */,
@@ -355,10 +373,12 @@
 				0F5CD9A322ADB21D00D91D06 /* Trailer.swift in Sources */,
 				0F5CD99B22AD6FD400D91D06 /* Movie.swift in Sources */,
 				0F5CD9A122AD9DAA00D91D06 /* Constants.swift in Sources */,
+				0F5CD9CE22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift in Sources */,
 				0F5CD9C022B03D4600D91D06 /* CoreManager.swift in Sources */,
 				0F5CD97122ACB8D300D91D06 /* AppDelegate.swift in Sources */,
 				0F5CD9BB22B03A6E00D91D06 /* FavoriteViewController.swift in Sources */,
 				0F5CD9C222B073CA00D91D06 /* MovieDetailViewController.swift in Sources */,
+				0F5CD9CC22B1E4FF00D91D06 /* Utils.swift in Sources */,
 				0F5CD9B722AF0C5400D91D06 /* SettingsViewController.swift in Sources */,
 				0F5CD99D22AD86C600D91D06 /* MovieAPI.swift in Sources */,
 				0F5CD9CA22B1B7DF00D91D06 /* ReviewCollectionCell.swift in Sources */,

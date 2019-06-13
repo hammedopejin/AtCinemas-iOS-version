@@ -27,6 +27,7 @@ struct MovieAPI {
     
     static let trailerThumbnailURL = "http://img.youtube.com/vi/"
     static let trailerThumbnailURLExtension = "/0.jpg"
+    static let trailerMovieURL = "https://www.youtube.com/watch?v="
     
     static func getNowPlayingUrl(page: Int) -> String {
         return base + nowPlaying + pageNo + "\(page)" + amp + apiKey
@@ -54,6 +55,10 @@ struct MovieAPI {
     
     static func getTrailerThumbnailURL(_ key: String) -> String {
         return trailerThumbnailURL + key + trailerThumbnailURLExtension
+    }
+    
+    static func getTrailerVideoURL(_ key: String) -> String {
+        return trailerMovieURL + key
     }
     
 }

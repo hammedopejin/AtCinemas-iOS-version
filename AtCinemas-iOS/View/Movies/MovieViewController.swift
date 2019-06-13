@@ -56,6 +56,7 @@ class MovieViewController: UIViewController {
     
 }
 
+//MARK: collection view
 extension MovieViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

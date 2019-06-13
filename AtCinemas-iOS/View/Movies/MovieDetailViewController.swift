@@ -20,9 +20,17 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieOverviewTextView: UITextView!
     
     var viewModel: MovieViewModel!
+    var favoriteViewModel: FavoriteMoviesViewModel!
+    var flag = false
+    var movie: Movie!
+    
+    var isFavorite: Bool {
+        return viewModel == nil
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMovie()
         setupViews()
     }
     
@@ -30,19 +38,35 @@ class MovieDetailViewController: UIViewController {
         movieOverviewTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
     }
     
+    func setupMovie() {
+        switch isFavorite {
+        case true:
+            movie = favoriteViewModel.currentMovie
+            viewModel = MovieViewModel()
+            viewModel.currentMovie = movie
+        default:
+            movie = viewModel.currentMovie
+        }
+    }
+    
     //MARK: Setup
     func setupViews() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateReviews), name: Notification.Name.ReviewNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTrailers), name: Notification.Name.TrailerNotification, object: nil)
-        
-        if let movie = viewModel.currentMovie {
+        if let movie = movie {
+            
+            flag = coreManager.isFavorite("\(movie.id)")
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(), style: .plain, target: self, action: #selector(saveMovie))
+            self.navigationItem.rightBarButtonItem?.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "stargold") : #imageLiteral(resourceName: "starplain"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(updateReviews), name: Notification.Name.ReviewNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(updateTrailers), name: Notification.Name.TrailerNotification, object: nil)
+            
             viewModel.getReviews(id: "\(movie.id)")
             viewModel.getTrailers(id: "\(movie.id)")
             
             movieTitleLabel.text = movie.title
             movieReleasedateLabel.text = movie.releaseDate
-            movieRatingsLabel.text = "\(movie.rating)"
+            movieRatingsLabel.text = "Ratings: \(movie.rating) of 10"
             movieOverviewTextView.text = "\(movie.overview)"
             downloadManager.download(MovieAPI.getThumbnailUrl(movie.imageUrl)) { [unowned self] dat in
                 
@@ -59,6 +83,18 @@ class MovieDetailViewController: UIViewController {
             }
         }
     
+    }
+    
+    @objc func saveMovie() {
+        
+        if viewModel != nil {
+            flag ? coreManager.deleteMovie(viewModel.currentMovie) : coreManager.saveMovie(viewModel.currentMovie)
+        } else {
+            flag ? coreManager.deleteMovie(favoriteViewModel.currentMovie) : coreManager.saveMovie(favoriteViewModel.currentMovie)
+        }
+        
+        self.navigationItem.rightBarButtonItem?.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "starplain") : #imageLiteral(resourceName: "stargold"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
+        flag = flag ? false : true
     }
 
     //MARK: Selector
@@ -85,7 +121,7 @@ extension MovieDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == self.trailerCollectionView{
+        if collectionView == self.trailerCollectionView {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrailerCollectionCell.identifier, for: indexPath) as! TrailerCollectionCell
             
@@ -114,5 +150,18 @@ extension MovieDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView == self.trailerCollectionView ? .init(width: 100, height: 120) : .init(width: UIScreen.main.bounds.size.width, height: 325)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == trailerCollectionView {
+            let trailer = viewModel.trailers[indexPath.row]
+            
+            let webVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            webVC.trailer = trailer
+            
+            navigationController?.pushViewController(webVC, animated: true)
+        
+        }
     }
 }
