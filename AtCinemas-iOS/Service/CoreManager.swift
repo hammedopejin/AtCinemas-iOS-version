@@ -35,7 +35,7 @@ final class CoreManager {
             return
         }
         
-        let coreMovie = NSManagedObject(entity: entity, insertInto: context)
+//        let coreMovie = NSManagedObject(entity: entity, insertInto: context)
         
     }
     

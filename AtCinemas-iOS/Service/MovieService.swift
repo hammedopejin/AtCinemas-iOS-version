@@ -107,7 +107,7 @@ final class MovieService {
         let urlString = MovieAPI.getMovieReviewUrl(with)
         
         guard let finalURL = URL(string: urlString) else {
-            completion([],MovieError.badURLPath("Bad Url Path"))
+            completion([], MovieError.badURLPath("Bad Url Path"))
             return
         }
         

@@ -106,7 +106,17 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        self.navigationItem.searchController?.dismiss(animated: true, completion: nil)
+        
+        let movies = isFiltering() ? movieViewModel.filteredMovies : movieViewModel.movies
+        let movie = movies[indexPath.row]
+        movieViewModel.currentMovie = movie
+        
+        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        
+        detailVC.viewModel = movieViewModel
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+       
     }
 }
 
