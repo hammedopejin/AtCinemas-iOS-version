@@ -1,0 +1,6 @@
+framework module Pods_AtCinemas_iOS {
+  umbrella header "Pods-AtCinemas-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

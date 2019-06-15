@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MovieViewController: UIViewController {
 
@@ -15,6 +16,20 @@ class MovieViewController: UIViewController {
     let movieViewModel = MovieViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     var by = Constants.Keys.nowPlaying.rawValue
+    
+    override func loadView() {
+        super.loadView()
+        
+        if Auth.auth().currentUser != nil {
+            if var controllers = tabBarController?.viewControllers {
+                let tabItem = UITabBarItem(title: "Cart", image: nil, selectedImage: nil)
+                let cartVC = CartViewController()
+                cartVC.tabBarItem = tabItem
+                controllers.append(cartVC)
+                tabBarController?.setViewControllers(controllers, animated: true)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +37,7 @@ class MovieViewController: UIViewController {
         setupCollectionView()
         createSearch()
         movieViewModel.requestMoreData(by: by, flag: true)
+   
     }
     
     @IBAction func toggleSegmentedControl(_ sender: UISegmentedControl) {
@@ -52,6 +68,8 @@ class MovieViewController: UIViewController {
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barTintColor = .white
         searchController.searchBar.placeholder = "Search for Movie..."
     }
     

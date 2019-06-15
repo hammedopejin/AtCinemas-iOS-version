@@ -29,6 +29,7 @@ struct Constants {
         case popular
         case topRated
         case AtCinemas = "AtCinemas_iOS"
+        case hash = "hash"
     } 
     
 }

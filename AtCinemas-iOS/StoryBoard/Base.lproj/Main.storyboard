@@ -1,18 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="now-Bo-aAi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Oi-ks-ACf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="aFF-nT-17q">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="7Oi-ks-ACf" customClass="SplashViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tju-nS-vo3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2xX-qn-Il0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e18-EO-qbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631" y="-296"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="zfe-kg-Z8y">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="HzC-eq-kxL" customClass="LoginViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yo8-kV-5rE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="oKK-bv-8ft">
+                                <rect key="frame" x="67" y="80" width="241" height="333"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awr-wY-mO4">
+                                <rect key="frame" x="107" y="437" width="161" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Qho-lc-jOw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
+                                <state key="normal" title="Continue With Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="googleButtonTapped:" destination="HzC-eq-kxL" eventType="touchUpInside" id="DZo-Wv-O1a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lua-hw-sLh">
+                                <rect key="frame" x="107" y="495" width="161" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xhk-fc-jPa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
+                                <state key="normal" title="Continue With Email">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="emailButtonTapped:" destination="HzC-eq-kxL" eventType="touchUpInside" id="zvd-mD-Ewv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Continue as guest" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prl-3G-mza">
+                                <rect key="frame" x="74" y="568" width="227" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" staticText="YES" allowsDirectInteraction="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <viewLayoutGuide key="safeArea" id="bW0-xC-ba3"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.07962868528" blue="0.067027487920000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3e0-DE-plA" appends="YES" id="TVj-xz-dRb"/>
+                                </connections>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="awr-wY-mO4" firstAttribute="trailing" secondItem="lua-hw-sLh" secondAttribute="trailing" id="1Cb-bq-Pnf"/>
+                            <constraint firstItem="cSd-yC-Ly1" firstAttribute="bottom" secondItem="prl-3G-mza" secondAttribute="bottom" constant="60" id="BAn-NW-DKg"/>
+                            <constraint firstItem="oKK-bv-8ft" firstAttribute="leading" secondItem="cSd-yC-Ly1" secondAttribute="leading" constant="67" id="EeN-3d-IAx"/>
+                            <constraint firstItem="awr-wY-mO4" firstAttribute="leading" secondItem="lua-hw-sLh" secondAttribute="leading" id="FV9-d3-E50"/>
+                            <constraint firstItem="cSd-yC-Ly1" firstAttribute="bottom" secondItem="lua-hw-sLh" secondAttribute="bottom" constant="132" id="UDF-ed-73g"/>
+                            <constraint firstItem="awr-wY-mO4" firstAttribute="top" secondItem="oKK-bv-8ft" secondAttribute="bottom" constant="24" id="V86-8b-nUZ"/>
+                            <constraint firstItem="oKK-bv-8ft" firstAttribute="centerX" secondItem="Yo8-kV-5rE" secondAttribute="centerX" id="ZzZ-Ux-3yN"/>
+                            <constraint firstItem="lua-hw-sLh" firstAttribute="top" secondItem="awr-wY-mO4" secondAttribute="bottom" constant="18" id="iWA-5Y-He3"/>
+                            <constraint firstItem="prl-3G-mza" firstAttribute="top" secondItem="lua-hw-sLh" secondAttribute="bottom" constant="33" id="jex-LE-xe8"/>
+                            <constraint firstItem="prl-3G-mza" firstAttribute="leading" secondItem="cSd-yC-Ly1" secondAttribute="leading" constant="74" id="lca-BH-S3v"/>
+                            <constraint firstItem="oKK-bv-8ft" firstAttribute="top" secondItem="cSd-yC-Ly1" secondAttribute="top" constant="60" id="ono-L3-XyP"/>
+                            <constraint firstItem="oKK-bv-8ft" firstAttribute="centerX" secondItem="awr-wY-mO4" secondAttribute="centerX" id="ra0-MI-VUc"/>
+                            <constraint firstItem="prl-3G-mza" firstAttribute="centerX" secondItem="lua-hw-sLh" secondAttribute="centerX" id="v28-bp-rrx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cSd-yC-Ly1"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailButton" destination="lua-hw-sLh" id="aiN-ij-Lxj"/>
+                        <outlet property="googleButton" destination="awr-wY-mO4" id="NJg-C3-b5w"/>
+                        <outlet property="guestLabel" destination="prl-3G-mza" id="5Nb-Dl-NGY"/>
+                        <outlet property="logoImageView" destination="oKK-bv-8ft" id="ZDi-Dd-rvZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dko-yK-fgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3e0-DE-plA">
+                    <connections>
+                        <action selector="guestButtonTapped:" destination="HzC-eq-kxL" id="8Da-eQ-CKe"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-854" y="-296"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VF2-ye-k3d">
             <objects>
-                <tabBarController id="now-Bo-aAi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabController" id="now-Bo-aAi" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G0J-tW-j2H">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -59,4 +168,7 @@
             <point key="canvasLocation" x="319" y="159"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="movie" width="36" height="36"/>
+    </resources>
 </document>

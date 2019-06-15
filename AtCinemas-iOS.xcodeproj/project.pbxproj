@@ -37,6 +37,13 @@
 		0F5CD9CC22B1E4FF00D91D06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9CB22B1E4FF00D91D06 /* Utils.swift */; };
 		0F5CD9CE22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9CD22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift */; };
 		0F5CD9D122B2097B00D91D06 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D022B2097B00D91D06 /* WebViewController.swift */; };
+		0F5CD9D622B3FA5E00D91D06 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D522B3FA5E00D91D06 /* SplashViewController.swift */; };
+		0F5CD9D822B3FA7B00D91D06 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D722B3FA7B00D91D06 /* LoginViewController.swift */; };
+		0F5CD9DA22B41C1B00D91D06 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */; };
+		0F5CD9DC22B41ED000D91D06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */; };
+		0F5CD9DF22B46FF000D91D06 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */; };
+		BCE9E98EFB05BFA8DE48B448 /* Pods_AtCinemas_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0A337C5A9D7D7D977E8E37 /* Pods_AtCinemas_iOSTests.framework */; };
+		F5C82DD6ED5111931867FF77 /* Pods_AtCinemas_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9EB62F54C6B1B138CF4A5B /* Pods_AtCinemas_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +91,17 @@
 		0F5CD9CB22B1E4FF00D91D06 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0F5CD9CD22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesViewModel.swift; sourceTree = "<group>"; };
 		0F5CD9D022B2097B00D91D06 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0F5CD9D522B3FA5E00D91D06 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0F5CD9D722B3FA7B00D91D06 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		340725FA040E2DD5FE19F01F /* Pods-AtCinemas-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtCinemas-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		577725DF2150A9BA56223A4E /* Pods-AtCinemas-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtCinemas-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtCinemas-iOSTests/Pods-AtCinemas-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D9EB62F54C6B1B138CF4A5B /* Pods_AtCinemas_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtCinemas_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0A337C5A9D7D7D977E8E37 /* Pods_AtCinemas_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtCinemas_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDF7C292BF3CAB85EF6F608 /* Pods-AtCinemas-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtCinemas-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtCinemas-iOSTests/Pods-AtCinemas-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		F2F7F06BB9F87DDF23139BE2 /* Pods-AtCinemas-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtCinemas-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5C82DD6ED5111931867FF77 /* Pods_AtCinemas_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE9E98EFB05BFA8DE48B448 /* Pods_AtCinemas_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +130,8 @@
 				0F5CD96F22ACB8D300D91D06 /* AtCinemas-iOS */,
 				0F5CD98722ACB8D400D91D06 /* AtCinemas-iOSTests */,
 				0F5CD96E22ACB8D300D91D06 /* Products */,
+				7E637713E45CA30B8D70FA00 /* Pods */,
+				A9CF6C4E9F718ECC015BCA9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +155,7 @@
 				0F5CD99722AD6CB800D91D06 /* Extensions */,
 				0F5CD99922AD6F1400D91D06 /* Utility */,
 				0F5CD97F22ACB8D400D91D06 /* Info.plist */,
+				0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */,
 				0F5CD97022ACB8D300D91D06 /* AppDelegate.swift */,
 			);
 			path = "AtCinemas-iOS";
@@ -151,10 +174,11 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD97A22ACB8D400D91D06 /* Assets.xcassets */,
-				0F5CD9BE22B03BB700D91D06 /* Settings */,
+				0F5CD9D422B3FA2C00D91D06 /* Main */,
 				0F5CD9CF22B2093900D91D06 /* web */,
 				0F5CD9BD22B03B9B00D91D06 /* Favorites */,
 				0F5CD9BC22B03B9000D91D06 /* Movies */,
+				0F5CD9BE22B03BB700D91D06 /* Settings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD9C722B0A29500D91D06 /* Notification+Name.swift */,
+				0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD9BA22B03A6E00D91D06 /* FavoriteViewController.swift */,
+				0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -256,6 +282,35 @@
 			path = web;
 			sourceTree = "<group>";
 		};
+		0F5CD9D422B3FA2C00D91D06 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0F5CD9D522B3FA5E00D91D06 /* SplashViewController.swift */,
+				0F5CD9D722B3FA7B00D91D06 /* LoginViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7E637713E45CA30B8D70FA00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				340725FA040E2DD5FE19F01F /* Pods-AtCinemas-iOS.debug.xcconfig */,
+				F2F7F06BB9F87DDF23139BE2 /* Pods-AtCinemas-iOS.release.xcconfig */,
+				577725DF2150A9BA56223A4E /* Pods-AtCinemas-iOSTests.debug.xcconfig */,
+				ECDF7C292BF3CAB85EF6F608 /* Pods-AtCinemas-iOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A9CF6C4E9F718ECC015BCA9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D9EB62F54C6B1B138CF4A5B /* Pods_AtCinemas_iOS.framework */,
+				CC0A337C5A9D7D7D977E8E37 /* Pods_AtCinemas_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,9 +318,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F5CD98D22ACB8D500D91D06 /* Build configuration list for PBXNativeTarget "AtCinemas-iOS" */;
 			buildPhases = (
+				9C3C9707C3328496FC65FE94 /* [CP] Check Pods Manifest.lock */,
 				0F5CD96922ACB8D300D91D06 /* Sources */,
 				0F5CD96A22ACB8D300D91D06 /* Frameworks */,
 				0F5CD96B22ACB8D300D91D06 /* Resources */,
+				1F0BDDF6559BD801894B6EBD /* [CP] Embed Pods Frameworks */,
+				8D82AEFA4ED58CC66DFD8104 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,6 +338,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F5CD99022ACB8D500D91D06 /* Build configuration list for PBXNativeTarget "AtCinemas-iOSTests" */;
 			buildPhases = (
+				18A4D17E111E457750683E7F /* [CP] Check Pods Manifest.lock */,
 				0F5CD98022ACB8D400D91D06 /* Sources */,
 				0F5CD98122ACB8D400D91D06 /* Frameworks */,
 				0F5CD98222ACB8D400D91D06 /* Resources */,
@@ -340,6 +399,7 @@
 				0F5CD9AB22AEC3FC00D91D06 /* Movies.storyboard in Resources */,
 				0F5CD97E22ACB8D400D91D06 /* LaunchScreen.storyboard in Resources */,
 				0F5CD97B22ACB8D400D91D06 /* Assets.xcassets in Resources */,
+				0F5CD9DC22B41ED000D91D06 /* GoogleService-Info.plist in Resources */,
 				0F5CD9B122AED75800D91D06 /* MovieCollectionCell.xib in Resources */,
 				0F5CD9B922B0268100D91D06 /* Favorites.storyboard in Resources */,
 				0F5CD97622ACB8D300D91D06 /* Main.storyboard in Resources */,
@@ -356,6 +416,105 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18A4D17E111E457750683E7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AtCinemas-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F0BDDF6559BD801894B6EBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D82AEFA4ED58CC66DFD8104 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C3C9707C3328496FC65FE94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AtCinemas-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F5CD96922ACB8D300D91D06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,17 +525,21 @@
 				0F5CD9B322AED79D00D91D06 /* MovieCollectionCell.swift in Sources */,
 				0F5CD9C622B0991800D91D06 /* TrailerCollectionCell.swift in Sources */,
 				0F5CD99F22AD8D9600D91D06 /* MovieService.swift in Sources */,
+				0F5CD9D622B3FA5E00D91D06 /* SplashViewController.swift in Sources */,
+				0F5CD9DF22B46FF000D91D06 /* CartViewController.swift in Sources */,
 				0F5CD9A722ADF34900D91D06 /* DownloadManager.swift in Sources */,
 				0F5CD97322ACB8D300D91D06 /* MovieViewController.swift in Sources */,
 				0F5CD9A522ADB6A900D91D06 /* Review.swift in Sources */,
 				0F5CD97922ACB8D300D91D06 /* AtCinemas_iOS.xcdatamodeld in Sources */,
 				0F5CD9A322ADB21D00D91D06 /* Trailer.swift in Sources */,
 				0F5CD99B22AD6FD400D91D06 /* Movie.swift in Sources */,
+				0F5CD9D822B3FA7B00D91D06 /* LoginViewController.swift in Sources */,
 				0F5CD9A122AD9DAA00D91D06 /* Constants.swift in Sources */,
 				0F5CD9CE22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift in Sources */,
 				0F5CD9C022B03D4600D91D06 /* CoreManager.swift in Sources */,
 				0F5CD97122ACB8D300D91D06 /* AppDelegate.swift in Sources */,
 				0F5CD9BB22B03A6E00D91D06 /* FavoriteViewController.swift in Sources */,
+				0F5CD9DA22B41C1B00D91D06 /* ViewController+Extension.swift in Sources */,
 				0F5CD9C222B073CA00D91D06 /* MovieDetailViewController.swift in Sources */,
 				0F5CD9CC22B1E4FF00D91D06 /* Utils.swift in Sources */,
 				0F5CD9B722AF0C5400D91D06 /* SettingsViewController.swift in Sources */,
@@ -542,6 +705,7 @@
 		};
 		0F5CD98E22ACB8D500D91D06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 340725FA040E2DD5FE19F01F /* Pods-AtCinemas-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +724,7 @@
 		};
 		0F5CD98F22ACB8D500D91D06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2F7F06BB9F87DDF23139BE2 /* Pods-AtCinemas-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +743,7 @@
 		};
 		0F5CD99122ACB8D500D91D06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577725DF2150A9BA56223A4E /* Pods-AtCinemas-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -599,6 +765,7 @@
 		};
 		0F5CD99222ACB8D500D91D06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECDF7C292BF3CAB85EF6F608 /* Pods-AtCinemas-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
