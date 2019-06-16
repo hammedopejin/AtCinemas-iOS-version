@@ -20,14 +20,39 @@ class CartViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        createCartObserver()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fireViewModel.getFire()
+    }
+    
     func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         collectionView.setupToFill(superView: view)
         collectionView.register(UINib(nibName: MovieCollectionCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCollectionCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44))
+        collectionView.addSubview(navBar)
+        let navItem = UINavigationItem(title: "Cart")
+        navBar.setItems([navItem], animated: false)
+    }
+    
+    func createCartObserver() {
+        NotificationCenter.default.addObserver(forName: Notification.Name.FireNotification, object: nil, queue: .main) {
+            [unowned self] _ in
+            self.collectionView.reloadData()
+            if fireViewModel.cartMovies.isEmpty {
+                self.showAlert(title: "Cart Empty!", message: "No Movie in the cart")
+            }
+        }
     }
     
 }
@@ -35,11 +60,14 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return fireViewModel.cartMovies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionCell.identifier, for: indexPath) as! MovieCollectionCell
+        
+        let movie = fireViewModel.cartMovies[indexPath.row]
+        cell.configure(movie: movie)
         
         return cell
     }
@@ -58,7 +86,7 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
             numberOfCell = 3.3
         }
         let width = UIScreen.main.bounds.size.width / numberOfCell
-        return .init(width: width, height: 128)
+        return .init(width: width, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -72,8 +100,10 @@ extension CartViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
-
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: UIScreen.main.bounds.size.width, height: 44)
     }
     
 }

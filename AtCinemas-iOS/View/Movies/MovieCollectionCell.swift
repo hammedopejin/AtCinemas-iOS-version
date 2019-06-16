@@ -11,14 +11,10 @@ import UIKit
 class MovieCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieLabel: UILabel!
-    
     
     static let identifier = "MovieCollectionCell"
     
     func configure(movie: Movie) {
-        
-        movieLabel.text = movie.title
         downloadManager.download(MovieAPI.getThumbnailUrl(movie.imageUrl)) { [unowned self] dat in
             
             guard let data = dat else {

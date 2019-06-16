@@ -24,4 +24,15 @@ extension UIViewController{
         present(alert, animated: true)
     }
     
+    func showAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        present(alert, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
 }

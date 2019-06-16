@@ -141,7 +141,7 @@
         <scene sceneID="0f2-n9-3QC">
             <objects>
                 <viewControllerPlaceholder storyboardName="Movies" id="zev-AC-Y3I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" id="uS4-h5-kYk"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="movie" id="uS4-h5-kYk"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YV3-ZY-ekR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +161,7 @@
         <scene sceneID="1ak-RM-7lf">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="uLw-rm-BQY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="lFP-Kw-MPK"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="lFP-Kw-MPK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1F9-t8-1cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,5 +170,6 @@
     </scenes>
     <resources>
         <image name="movie" width="36" height="36"/>
+        <image name="settings" width="16" height="16"/>
     </resources>
 </document>

@@ -87,12 +87,11 @@ extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let movies = favoriteViewModel.favoriteMovies
-        let movie = movies[indexPath.row]
-        favoriteViewModel.currentMovie = movie
         
+        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhotoPageContainerViewController") as! PhotoPageContainerViewController
         
-        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
-        
+        detailVC.currentIndex = indexPath.row
+        detailVC.movies = movies
         detailVC.favoriteViewModel = favoriteViewModel
         detailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
@@ -107,6 +106,13 @@ extension FavoriteViewController: FavoriteMoviesViewModelDelegate {
         
         DispatchQueue.main.async {
             self.favoriteCollectionView.reloadData()
+        }
+    }
+    
+    func showUpdateAlert() {
+        if self.favoriteViewModel.favoriteMovies.isEmpty {
+            self.showAlert(title: "",
+                           message: "No Favorite Movie yet!")
         }
     }
 }

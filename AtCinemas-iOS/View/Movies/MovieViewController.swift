@@ -22,7 +22,7 @@ class MovieViewController: UIViewController {
         
         if Auth.auth().currentUser != nil {
             if var controllers = tabBarController?.viewControllers {
-                let tabItem = UITabBarItem(title: "Cart", image: nil, selectedImage: nil)
+                let tabItem = UITabBarItem(title: "Cart", image: UIImage(named: "cart"), selectedImage: nil)
                 let cartVC = CartViewController()
                 cartVC.tabBarItem = tabItem
                 controllers.append(cartVC)
@@ -66,11 +66,12 @@ class MovieViewController: UIViewController {
         
         searchController.dimsBackgroundDuringPresentation =  false
         searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchBar.tintColor = .white
+        navigationItem.titleView = searchController.searchBar
+        navigationItem.searchController?.searchBar.backgroundColor = .white
         searchController.searchBar.barTintColor = .white
+        searchController.searchBar.tintColor = .blue
         searchController.searchBar.placeholder = "Search for Movie..."
+        searchController.hidesNavigationBarDuringPresentation = false
     }
     
     //MARK: Helper func
@@ -132,7 +133,7 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         if UIScreen.main.bounds.size.width > 500 {
-            return .init(top: 10, left: 30, bottom: 10, right: 30)
+            return .init(top: 10, left: 10, bottom: 10, right: 10)
         }else{
             return .init(top: 10, left: 2, bottom: 10, right: 2)
         }
@@ -142,15 +143,16 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let movies = isFiltering() ? movieViewModel.filteredMovies : movieViewModel.movies
-        let movie = movies[indexPath.row]
-        movieViewModel.currentMovie = movie
         
-        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhotoPageContainerViewController") as! PhotoPageContainerViewController
+        
+        detailVC.currentIndex = indexPath.row
+        detailVC.movies = movies
         
         detailVC.viewModel = movieViewModel
         detailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
-       
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

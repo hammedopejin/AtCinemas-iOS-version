@@ -10,6 +10,7 @@ import Foundation
 
 enum MovieError: Error {
     case badURLPath(String)
+    case noMovie(String)
 }
 
 typealias MovieHandler =  ([Movie], Error?) -> Void

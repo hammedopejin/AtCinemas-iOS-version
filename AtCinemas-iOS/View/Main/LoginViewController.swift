@@ -122,22 +122,20 @@ extension LoginViewController: GIDSignInUIDelegate, GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         
-        
         //If so, sign user in with credential from Google to Firebase
-        Auth.auth().signIn(with: credential) { [unowned self] (result, error) in
+        Auth.auth().signInAndRetrieveData(with: credential) { [unowned self] (result, error) in
             if let err = error {
                 print("Error Signing in: \(err.localizedDescription)")
                 return
             }
             
             if let auth = result {
-                print("Successful SignIn: \(auth.uid)")
+                print("Successful SignIn: \(auth.user.uid)")
                 let tab = self.goToHome()
                 self.present(tab, animated: true, completion: nil)
             }
         }
+    
     }
     
 }
-
-//signInAndRetrieveData(with:completion:)

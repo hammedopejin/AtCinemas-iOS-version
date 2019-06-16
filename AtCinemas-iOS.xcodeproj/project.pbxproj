@@ -42,6 +42,10 @@
 		0F5CD9DA22B41C1B00D91D06 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */; };
 		0F5CD9DC22B41ED000D91D06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */; };
 		0F5CD9DF22B46FF000D91D06 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */; };
+		0F5CD9E122B478CD00D91D06 /* PhotoPageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E022B478CD00D91D06 /* PhotoPageContainerViewController.swift */; };
+		0F5CD9E322B57AD400D91D06 /* FireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E222B57AD400D91D06 /* FireService.swift */; };
+		0F5CD9E522B583FD00D91D06 /* Movie+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E422B583FC00D91D06 /* Movie+Extension.swift */; };
+		0F5CD9E722B5A73500D91D06 /* FireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E622B5A73500D91D06 /* FireViewModel.swift */; };
 		BCE9E98EFB05BFA8DE48B448 /* Pods_AtCinemas_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0A337C5A9D7D7D977E8E37 /* Pods_AtCinemas_iOSTests.framework */; };
 		F5C82DD6ED5111931867FF77 /* Pods_AtCinemas_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9EB62F54C6B1B138CF4A5B /* Pods_AtCinemas_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,10 @@
 		0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		0F5CD9E022B478CD00D91D06 /* PhotoPageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageContainerViewController.swift; sourceTree = "<group>"; };
+		0F5CD9E222B57AD400D91D06 /* FireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireService.swift; sourceTree = "<group>"; };
+		0F5CD9E422B583FC00D91D06 /* Movie+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Extension.swift"; sourceTree = "<group>"; };
+		0F5CD9E622B5A73500D91D06 /* FireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireViewModel.swift; sourceTree = "<group>"; };
 		340725FA040E2DD5FE19F01F /* Pods-AtCinemas-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtCinemas-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtCinemas-iOS/Pods-AtCinemas-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		577725DF2150A9BA56223A4E /* Pods-AtCinemas-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtCinemas-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtCinemas-iOSTests/Pods-AtCinemas-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D9EB62F54C6B1B138CF4A5B /* Pods_AtCinemas_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtCinemas_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,9 +183,9 @@
 			children = (
 				0F5CD97A22ACB8D400D91D06 /* Assets.xcassets */,
 				0F5CD9D422B3FA2C00D91D06 /* Main */,
+				0F5CD9BC22B03B9000D91D06 /* Movies */,
 				0F5CD9CF22B2093900D91D06 /* web */,
 				0F5CD9BD22B03B9B00D91D06 /* Favorites */,
-				0F5CD9BC22B03B9000D91D06 /* Movies */,
 				0F5CD9BE22B03BB700D91D06 /* Settings */,
 			);
 			path = View;
@@ -211,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD99C22AD86C600D91D06 /* MovieAPI.swift */,
+				0F5CD9E222B57AD400D91D06 /* FireService.swift */,
 				0F5CD9BF22B03D4600D91D06 /* CoreManager.swift */,
 				0F5CD99E22AD8D9600D91D06 /* MovieService.swift */,
 				0F5CD9A622ADF34900D91D06 /* DownloadManager.swift */,
@@ -223,6 +232,7 @@
 			children = (
 				0F5CD9C722B0A29500D91D06 /* Notification+Name.swift */,
 				0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */,
+				0F5CD9E422B583FC00D91D06 /* Movie+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 			children = (
 				0F5CD9B422AEE9EF00D91D06 /* MovieViewModel.swift */,
 				0F5CD9CD22B1F61F00D91D06 /* FavoriteMoviesViewModel.swift */,
+				0F5CD9E622B5A73500D91D06 /* FireViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD97222ACB8D300D91D06 /* MovieViewController.swift */,
+				0F5CD9E022B478CD00D91D06 /* PhotoPageContainerViewController.swift */,
 				0F5CD9B222AED79D00D91D06 /* MovieCollectionCell.swift */,
 				0F5CD9C122B073CA00D91D06 /* MovieDetailViewController.swift */,
 				0F5CD9B022AED75800D91D06 /* MovieCollectionCell.xib */,
@@ -521,15 +533,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5CD9C822B0A29500D91D06 /* Notification+Name.swift in Sources */,
+				0F5CD9E522B583FD00D91D06 /* Movie+Extension.swift in Sources */,
 				0F5CD9D122B2097B00D91D06 /* WebViewController.swift in Sources */,
 				0F5CD9B322AED79D00D91D06 /* MovieCollectionCell.swift in Sources */,
 				0F5CD9C622B0991800D91D06 /* TrailerCollectionCell.swift in Sources */,
 				0F5CD99F22AD8D9600D91D06 /* MovieService.swift in Sources */,
 				0F5CD9D622B3FA5E00D91D06 /* SplashViewController.swift in Sources */,
+				0F5CD9E122B478CD00D91D06 /* PhotoPageContainerViewController.swift in Sources */,
+				0F5CD9E722B5A73500D91D06 /* FireViewModel.swift in Sources */,
 				0F5CD9DF22B46FF000D91D06 /* CartViewController.swift in Sources */,
 				0F5CD9A722ADF34900D91D06 /* DownloadManager.swift in Sources */,
 				0F5CD97322ACB8D300D91D06 /* MovieViewController.swift in Sources */,
 				0F5CD9A522ADB6A900D91D06 /* Review.swift in Sources */,
+				0F5CD9E322B57AD400D91D06 /* FireService.swift in Sources */,
 				0F5CD97922ACB8D300D91D06 /* AtCinemas_iOS.xcdatamodeld in Sources */,
 				0F5CD9A322ADB21D00D91D06 /* Trailer.swift in Sources */,
 				0F5CD99B22AD6FD400D91D06 /* Movie.swift in Sources */,

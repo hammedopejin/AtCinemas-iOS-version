@@ -19,18 +19,13 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieRatingsLabel: UILabel!
     @IBOutlet weak var movieOverviewTextView: UITextView!
     
-    var viewModel: MovieViewModel!
-    var favoriteViewModel: FavoriteMoviesViewModel!
-    var flag = false
-    var movie: Movie!
+    var index: Int = 0
     
-    var isFavorite: Bool {
-        return viewModel == nil
-    }
+    var viewModel: MovieViewModel!
+    var movie: Movie!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMovie()
         setupViews()
     }
     
@@ -38,63 +33,30 @@ class MovieDetailViewController: UIViewController {
         movieOverviewTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
     }
     
-    func setupMovie() {
-        switch isFavorite {
-        case true:
-            movie = favoriteViewModel.currentMovie
-            viewModel = MovieViewModel()
-            viewModel.currentMovie = movie
-        default:
-            movie = viewModel.currentMovie
-        }
-    }
-    
     //MARK: Setup
     func setupViews() {
         
-        if let movie = movie {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateReviews), name: Notification.Name.ReviewNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTrailers), name: Notification.Name.TrailerNotification, object: nil)
             
-            flag = coreManager.isFavorite("\(movie.id)")
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(), style: .plain, target: self, action: #selector(saveMovie))
-            self.navigationItem.rightBarButtonItem?.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "stargold") : #imageLiteral(resourceName: "starplain"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(updateReviews), name: Notification.Name.ReviewNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(updateTrailers), name: Notification.Name.TrailerNotification, object: nil)
-            
-            viewModel.getReviews(id: "\(movie.id)")
-            viewModel.getTrailers(id: "\(movie.id)")
-            
-            movieTitleLabel.text = movie.title
-            movieReleasedateLabel.text = movie.releaseDate
-            movieRatingsLabel.text = "Ratings: \(movie.rating) of 10"
-            movieOverviewTextView.text = "\(movie.overview)"
-            downloadManager.download(MovieAPI.getThumbnailUrl(movie.imageUrl)) { [unowned self] dat in
+        movieTitleLabel.text = movie.title
+        movieReleasedateLabel.text = movie.releaseDate
+        movieRatingsLabel.text = "Ratings: \(movie.rating) of 10"
+        movieOverviewTextView.text = "\(movie.overview)"
+        downloadManager.download(MovieAPI.getThumbnailUrl(movie.imageUrl)) { [unowned self] dat in
                 
-                guard let data = dat else {
-                    DispatchQueue.main.async {
-                        self.movieImageView.image = #imageLiteral(resourceName: "movie")
-                    }
-                    return
+            guard let data = dat else {
+                DispatchQueue.main.async {
+                    self.movieImageView.image = #imageLiteral(resourceName: "movie")
                 }
-                
-                let img = UIImage(data: data)
-                self.movieImageView.image = img
-                
+                return
             }
-        }
-    
-    }
-    
-    @objc func saveMovie() {
-        
-        if viewModel != nil {
-            flag ? coreManager.deleteMovie(viewModel.currentMovie) : coreManager.saveMovie(viewModel.currentMovie)
-        } else {
-            flag ? coreManager.deleteMovie(favoriteViewModel.currentMovie) : coreManager.saveMovie(favoriteViewModel.currentMovie)
+                
+            let img = UIImage(data: data)
+            self.movieImageView.image = img
+                
         }
         
-        self.navigationItem.rightBarButtonItem?.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "starplain") : #imageLiteral(resourceName: "stargold"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
-        flag = flag ? false : true
     }
 
     //MARK: Selector

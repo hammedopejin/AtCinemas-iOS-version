@@ -13,5 +13,6 @@ extension Notification.Name {
     
     static let ReviewNotification = Notification.Name("ReviewNotification")
     static let TrailerNotification = Notification.Name("TrailerNotification")
+    static let FireNotification = Notification.Name("FireNotification")
     
 }

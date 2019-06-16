@@ -17,20 +17,17 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupSettings()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        Utils.lockOrientation(.portrait, andRotateTo : .portrait)
         if let hash = UserDefaults.standard.value(forKey: Constants.Keys.hash.rawValue) as? String,
             let url = Utils.loadWithFileManager(hash),
             let image = UIImage(contentsOfFile: url.path) {
             userImageView.image = image
         }
-        Utils.lockOrientation(.portrait)
     }
     
     
@@ -40,8 +37,6 @@ class SettingsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Don't forget to reset when view is being removed
         Utils.lockOrientation(.all)
     }
     

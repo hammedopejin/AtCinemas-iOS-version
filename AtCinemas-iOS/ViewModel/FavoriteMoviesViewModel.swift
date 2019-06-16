@@ -10,16 +10,17 @@ import UIKit
 
 protocol FavoriteMoviesViewModelDelegate: class {
     func updateView()
+    func showUpdateAlert()
 }
 
 class FavoriteMoviesViewModel {
     
     weak var delegate: FavoriteMoviesViewModelDelegate?
-    var currentMovie: Movie!
     
     var favoriteMovies = [Movie]() {
         didSet {
             delegate?.updateView()
+            delegate?.showUpdateAlert()
         }
     }
     

@@ -49,6 +49,7 @@ struct Utils {
         return nil
     }
     
+    //Lock orientation
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
         
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
@@ -56,7 +57,7 @@ struct Utils {
         }
     }
     
-    /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
+    // OPTIONAL Added method to adjust lock and rotate to the desired orientation
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
         
         self.lockOrientation(orientation)
@@ -92,4 +93,3 @@ func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
     
     return newImage!
 }
-

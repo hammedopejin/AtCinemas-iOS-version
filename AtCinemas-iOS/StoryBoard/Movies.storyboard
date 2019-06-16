@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dj2-vf-orY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movies" id="P5G-tv-YdV"/>
+                    <tabBarItem key="tabBarItem" title="Movies" image="movie" id="P5G-tv-YdV"/>
                     <navigationItem key="navigationItem" id="wCd-OI-QcI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdB-4n-i2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922.4000000000001" y="38.23088455772114"/>
+            <point key="canvasLocation" x="1228" y="37"/>
         </scene>
         <!--Movies-->
         <scene sceneID="fIk-7w-N2k">
@@ -91,7 +91,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egV-Zy-wG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="38"/>
+            <point key="canvasLocation" x="497" y="38"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="4bZ-me-IUX">
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eni-SD-8mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847.826086956522" y="44.866071428571423"/>
+            <point key="canvasLocation" x="4434" y="36"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="v11-io-yFu">
@@ -364,7 +364,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMy-RQ-WVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3769" y="45"/>
+            <point key="canvasLocation" x="4527" y="-1029"/>
+        </scene>
+        <!--Photo Page Container View Controller-->
+        <scene sceneID="rfU-nH-IZu">
+            <objects>
+                <viewController storyboardIdentifier="PhotoPageContainerViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Ggm-9J-dVv" customClass="PhotoPageContainerViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zhs-sv-Jt1"/>
+                        <viewControllerLayoutGuide type="bottom" id="zKq-ld-jlM"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="UFm-GV-7dK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvW-o4-Ytk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="LWP-CW-zlL" kind="embed" id="jvc-Wp-rTk"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JvW-o4-Ytk" secondAttribute="bottom" id="0fK-5w-lNU"/>
+                            <constraint firstItem="JvW-o4-Ytk" firstAttribute="top" secondItem="UFm-GV-7dK" secondAttribute="top" id="T5Q-pJ-3Pg"/>
+                            <constraint firstItem="JvW-o4-Ytk" firstAttribute="leading" secondItem="UFm-GV-7dK" secondAttribute="leading" id="xym-Gn-WdM"/>
+                            <constraint firstAttribute="trailing" secondItem="JvW-o4-Ytk" secondAttribute="trailing" id="yn0-XG-ycd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sQL-jV-M1b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YYB-ii-kFl"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKL-kQ-k57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2591" y="37"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ZRp-VL-1Rw">
+            <objects>
+                <pageViewController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="LWP-CW-zlL" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dc0-AB-vCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3489" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="movie" width="36" height="36"/>
+    </resources>
 </document>

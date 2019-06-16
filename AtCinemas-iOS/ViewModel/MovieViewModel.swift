@@ -18,7 +18,6 @@ class MovieViewModel {
     private var isRequesting = false
     private var lastRequestedPage = 0
     var filteredMovies = [Movie]()
-    var currentMovie: Movie!
     
     var movies = [Movie]() {
         didSet {
