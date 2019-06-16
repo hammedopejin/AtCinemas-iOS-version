@@ -134,6 +134,15 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bRR-60-ykP">
                                                             <rect key="frame" x="0.0" y="8" width="100" height="87"/>
                                                         </imageView>
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlf-sN-RFx">
+                                                            <rect key="frame" x="34" y="35.5" width="32" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Xlf-sN-RFx" secondAttribute="height" multiplier="1:1" id="gjv-kt-7Sb"/>
+                                                                <constraint firstAttribute="height" constant="32" id="soX-DH-sbx"/>
+                                                                <constraint firstAttribute="width" constant="32" id="tT6-wt-kBB"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="play"/>
+                                                        </button>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
@@ -141,6 +150,8 @@
                                                     <constraint firstItem="bRR-60-ykP" firstAttribute="leading" secondItem="Lsg-BC-sZ8" secondAttribute="leading" id="4Vt-lU-Jim"/>
                                                     <constraint firstAttribute="trailing" secondItem="bRR-60-ykP" secondAttribute="trailing" id="9Vq-8F-gJd"/>
                                                     <constraint firstAttribute="bottom" secondItem="bRR-60-ykP" secondAttribute="bottom" constant="8" id="KGp-FB-MEz"/>
+                                                    <constraint firstItem="Xlf-sN-RFx" firstAttribute="centerY" secondItem="bRR-60-ykP" secondAttribute="centerY" id="MeM-fJ-Xd6"/>
+                                                    <constraint firstItem="Xlf-sN-RFx" firstAttribute="centerX" secondItem="bRR-60-ykP" secondAttribute="centerX" id="RDb-k1-XuC"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="trailerImageView" destination="bRR-60-ykP" id="9xT-Js-PJA"/>
@@ -309,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eni-SD-8mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4434" y="36"/>
+            <point key="canvasLocation" x="4432.8000000000002" y="35.532233883058474"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="v11-io-yFu">
@@ -418,5 +429,6 @@
     </scenes>
     <resources>
         <image name="movie" width="36" height="36"/>
+        <image name="play" width="32" height="32"/>
     </resources>
 </document>
