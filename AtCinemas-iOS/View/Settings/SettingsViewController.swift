@@ -61,18 +61,25 @@ class SettingsViewController: UIViewController {
         settingsTableView.tableFooterView = UIView(frame: .zero)
     }
     
-    func showLogoutView(){
+    func showLogoutView(view: UIView){
+        
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let logOut = UIAlertAction(title: "Log Out", style: .destructive){ (alert: UIAlertAction!) in
+        if let popoverController = optionMenu.popoverPresentationController {
+            popoverController.sourceView = view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        let logoutAction = UIAlertAction(title: "Log Out", style: .destructive){ (alert: UIAlertAction!) in
             self.logOut()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert: UIAlertAction!) in
-            
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alert: UIAlertAction!) in
+    
         }
         
-        optionMenu.addAction(logOut)
+        optionMenu.addAction(logoutAction)
         optionMenu.addAction(cancelAction)
         
         self.present(optionMenu, animated: true, completion: nil)
@@ -194,7 +201,7 @@ extension SettingsViewController: UITableViewDelegate {
         }
         
         if indexPath.section == 1 && indexPath.row == 2 {
-            showLogoutView()
+            showLogoutView(view: tableView.cellForRow(at: indexPath)!)
         }
     }
     

@@ -24,26 +24,27 @@ class LoginViewController: UIViewController {
 
         setupLogin()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Utils.lockOrientation(.portrait, andRotateTo : .portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Utils.lockOrientation(.all)
+    }
    
     @IBAction func googleButtonTapped(_ sender: UIButton) {
-        
         GIDSignIn.sharedInstance()?.signIn()
     }
     
     @IBAction func emailButtonTapped(_ sender: UIButton) {
         
         let alert = UIAlertController(title: nil, message: "Enter email and password", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         let login = UIAlertAction(title: "Login", style: .default) { _ in
             guard let fields = alert.textFields, let emailField = fields.first, let passwordField = fields.last else {
-                return
-            }
-            emailField.placeholder = "Enter Email"
-            passwordField.placeholder = "Enter Password"
-            passwordField.isSecureTextEntry = true
-            
-            if emailField.text == "" || passwordField.text == "" {
-                print("All text fields must be entered properly!")
                 return
             }
             
@@ -81,8 +82,14 @@ class LoginViewController: UIViewController {
             }
         }
         
-        alert.addTextField(configurationHandler: nil)
-        alert.addTextField(configurationHandler: nil)
+        alert.addTextField(configurationHandler: .init({ emailField in
+            emailField.placeholder = "Enter Email"
+        }))
+        
+        alert.addTextField(configurationHandler: .init({ passwordField in
+            passwordField.placeholder = "Enter Password"
+            passwordField.isSecureTextEntry = true
+            }))
         alert.addAction(login)
         alert.addAction(cancel)
         present(alert, animated: true)

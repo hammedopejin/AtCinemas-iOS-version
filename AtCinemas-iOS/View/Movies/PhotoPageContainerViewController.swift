@@ -59,7 +59,11 @@ class PhotoPageContainerViewController: UIViewController {
         starButton.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "stargold") : #imageLiteral(resourceName: "starplain"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
         let cartButton = UIBarButtonItem(image: cartImage,  style: .plain, target: self, action: #selector(addToCart))
         
-        navigationItem.rightBarButtonItems = [starButton, cartButton]
+        if Auth.auth().currentUser != nil {
+            navigationItem.rightBarButtonItems = [starButton, cartButton]
+        } else {
+            navigationItem.rightBarButtonItems = [starButton]
+        }
         
         viewModel.getReviews(id: "\(self.movies[self.currentIndex].id)")
         viewModel.getTrailers(id: "\(self.movies[self.currentIndex].id)")
