@@ -144,7 +144,7 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
         
         let movies = isFiltering() ? movieViewModel.filteredMovies : movieViewModel.movies
         
-        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhotoPageContainerViewController") as! PhotoPageContainerViewController
+        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhotoPageContainerViewController") as! MoviePageContainerViewController
         
         detailVC.currentIndex = indexPath.row
         detailVC.movies = movies

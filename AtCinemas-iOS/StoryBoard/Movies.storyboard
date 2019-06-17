@@ -377,10 +377,10 @@
             </objects>
             <point key="canvasLocation" x="4527" y="-1029"/>
         </scene>
-        <!--Photo Page Container View Controller-->
+        <!--Movie Page Container View Controller-->
         <scene sceneID="rfU-nH-IZu">
             <objects>
-                <viewController storyboardIdentifier="PhotoPageContainerViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Ggm-9J-dVv" customClass="PhotoPageContainerViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoPageContainerViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Ggm-9J-dVv" customClass="MoviePageContainerViewController" customModule="AtCinemas_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zhs-sv-Jt1"/>
                         <viewControllerLayoutGuide type="bottom" id="zKq-ld-jlM"/>

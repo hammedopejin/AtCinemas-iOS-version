@@ -42,7 +42,7 @@
 		0F5CD9DA22B41C1B00D91D06 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */; };
 		0F5CD9DC22B41ED000D91D06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */; };
 		0F5CD9DF22B46FF000D91D06 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */; };
-		0F5CD9E122B478CD00D91D06 /* PhotoPageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E022B478CD00D91D06 /* PhotoPageContainerViewController.swift */; };
+		0F5CD9E122B478CD00D91D06 /* MoviePageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E022B478CD00D91D06 /* MoviePageContainerViewController.swift */; };
 		0F5CD9E322B57AD400D91D06 /* FireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E222B57AD400D91D06 /* FireService.swift */; };
 		0F5CD9E522B583FD00D91D06 /* Movie+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E422B583FC00D91D06 /* Movie+Extension.swift */; };
 		0F5CD9E722B5A73500D91D06 /* FireViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5CD9E622B5A73500D91D06 /* FireViewModel.swift */; };
@@ -100,7 +100,7 @@
 		0F5CD9D922B41C1B00D91D06 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		0F5CD9DB22B41ECF00D91D06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F5CD9DE22B46FF000D91D06 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		0F5CD9E022B478CD00D91D06 /* PhotoPageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageContainerViewController.swift; sourceTree = "<group>"; };
+		0F5CD9E022B478CD00D91D06 /* MoviePageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageContainerViewController.swift; sourceTree = "<group>"; };
 		0F5CD9E222B57AD400D91D06 /* FireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireService.swift; sourceTree = "<group>"; };
 		0F5CD9E422B583FC00D91D06 /* Movie+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Extension.swift"; sourceTree = "<group>"; };
 		0F5CD9E622B5A73500D91D06 /* FireViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireViewModel.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5CD97222ACB8D300D91D06 /* MovieViewController.swift */,
-				0F5CD9E022B478CD00D91D06 /* PhotoPageContainerViewController.swift */,
+				0F5CD9E022B478CD00D91D06 /* MoviePageContainerViewController.swift */,
 				0F5CD9B222AED79D00D91D06 /* MovieCollectionCell.swift */,
 				0F5CD9C122B073CA00D91D06 /* MovieDetailViewController.swift */,
 				0F5CD9B022AED75800D91D06 /* MovieCollectionCell.xib */,
@@ -539,7 +539,7 @@
 				0F5CD9C622B0991800D91D06 /* TrailerCollectionCell.swift in Sources */,
 				0F5CD99F22AD8D9600D91D06 /* MovieService.swift in Sources */,
 				0F5CD9D622B3FA5E00D91D06 /* SplashViewController.swift in Sources */,
-				0F5CD9E122B478CD00D91D06 /* PhotoPageContainerViewController.swift in Sources */,
+				0F5CD9E122B478CD00D91D06 /* MoviePageContainerViewController.swift in Sources */,
 				0F5CD9E722B5A73500D91D06 /* FireViewModel.swift in Sources */,
 				0F5CD9DF22B46FF000D91D06 /* CartViewController.swift in Sources */,
 				0F5CD9A722ADF34900D91D06 /* DownloadManager.swift in Sources */,

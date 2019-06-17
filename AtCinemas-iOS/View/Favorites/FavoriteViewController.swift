@@ -88,7 +88,7 @@ extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
         
         let movies = favoriteViewModel.favoriteMovies
         
-        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhotoPageContainerViewController") as! PhotoPageContainerViewController
+        let detailVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "PhotoPageContainerViewController") as! MoviePageContainerViewController
         
         detailVC.currentIndex = indexPath.row
         detailVC.movies = movies

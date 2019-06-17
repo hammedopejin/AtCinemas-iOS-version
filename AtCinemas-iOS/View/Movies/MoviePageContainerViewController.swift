@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class PhotoPageContainerViewController: UIViewController {
+class MoviePageContainerViewController: UIViewController {
     
     var pageViewController: UIPageViewController {
         return self.children[0] as! UIPageViewController
@@ -91,7 +91,7 @@ class PhotoPageContainerViewController: UIViewController {
     
 }
 
-extension PhotoPageContainerViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+extension MoviePageContainerViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
