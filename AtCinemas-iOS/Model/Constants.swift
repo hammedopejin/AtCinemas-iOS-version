@@ -27,8 +27,12 @@ struct Constants {
         case topRated
         case AtCinemas = "AtCinemas_iOS"
         case hash = "hash"
-        case user = "user"
         case movies = "movies"
-    } 
+    }
+    
+    enum Urls: String {
+        case privacyPolicy = "https://docs.google.com/document/d/e/2PACX-1vSkGainGErlD4djUcLFtpKq-siYepTPpwBSaqRmyaNbSiOrA7KQV2nlh4RRFjVNblAChaFQRPo9Ii4d/pub"
+        case terms_Conditions = "https://docs.google.com/document/d/e/2PACX-1vQ2DILBJ5ecmv7c0ORT8KNc402Id9jW4FPPd2HqvrQLYMnKm2ah9Pbj04PK6v7SqIxQUC6cxLTPA29E/pub"
+    }
     
 }

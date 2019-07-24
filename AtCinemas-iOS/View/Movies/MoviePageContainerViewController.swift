@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class MoviePageContainerViewController: UIViewController {
     
@@ -54,16 +53,10 @@ class MoviePageContainerViewController: UIViewController {
         
         flag = coreManager.isFavorite("\(self.movies[self.currentIndex].id)")
         
-        let cartImage  = UIImage(named: "cart")!
         let starButton = UIBarButtonItem(image: UIImage(), style: .plain, target: self, action: #selector(saveMovie))
         starButton.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "stargold") : #imageLiteral(resourceName: "starplain"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
-        let cartButton = UIBarButtonItem(image: cartImage,  style: .plain, target: self, action: #selector(addToCart))
         
-        if Auth.auth().currentUser != nil {
-            navigationItem.rightBarButtonItems = [starButton, cartButton]
-        } else {
-            navigationItem.rightBarButtonItems = [starButton]
-        }
+        navigationItem.rightBarButtonItems = [starButton]
         
         viewModel.getReviews(id: "\(self.movies[self.currentIndex].id)")
         viewModel.getTrailers(id: "\(self.movies[self.currentIndex].id)")
@@ -75,18 +68,6 @@ class MoviePageContainerViewController: UIViewController {
         
         navigationItem.rightBarButtonItem?.setBackgroundImage(resizeImage(image: flag ? #imageLiteral(resourceName: "starplain") : #imageLiteral(resourceName: "stargold"), targetSize: CGSize(width: 100.0, height: 40.0)), for: .normal, barMetrics: .default)
         flag = flag ? false : true
-    }
-    
-    @objc func addToCart() {
-        if fireViewModel.cartID.contains("\(self.movies[self.currentIndex].id)") {
-            fireService.remove(self.movies[self.currentIndex])
-            fireViewModel.cartID.remove("\(self.movies[self.currentIndex].id)")
-            showAlert(title: "", message: "\(self.movies[self.currentIndex].title) removed from cart")
-        } else {
-            fireService.add(self.movies[self.currentIndex])
-            fireViewModel.cartID.insert("\(self.movies[self.currentIndex].id)")
-            showAlert(title: "", message: "\(self.movies[self.currentIndex].title) added to cart")
-        }
     }
     
 }

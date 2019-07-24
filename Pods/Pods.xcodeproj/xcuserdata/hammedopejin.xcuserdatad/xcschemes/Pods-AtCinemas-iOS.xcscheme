@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D29257B29A9B4EEF7CFFD0B90D9B9C6"
+               BlueprintIdentifier = "CDDF5BACE8229FA2B5B0C6897E085AA8"
                BuildableName = "Pods_AtCinemas_iOS.framework"
                BlueprintName = "Pods-AtCinemas-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D29257B29A9B4EEF7CFFD0B90D9B9C6"
+            BlueprintIdentifier = "CDDF5BACE8229FA2B5B0C6897E085AA8"
             BuildableName = "Pods_AtCinemas_iOS.framework"
             BlueprintName = "Pods-AtCinemas-iOS"
             ReferencedContainer = "container:Pods.xcodeproj">

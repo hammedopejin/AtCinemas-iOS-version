@@ -15,15 +15,6 @@ class FireViewModel {
     static let shared = FireViewModel()
     private init() {}
     
-    var cartID = Set<String>()
-    
-    var cartMovies = [Movie]() {
-        didSet {
-            setCartIDs()
-            NotificationCenter.default.post(name: Notification.Name.FireNotification, object: nil)
-        }
-    }
-    
     func getFire() {
         
         fireService.get { [unowned self] movies, err in

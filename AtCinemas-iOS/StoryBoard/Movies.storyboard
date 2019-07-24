@@ -320,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eni-SD-8mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4432.8000000000002" y="35.532233883058474"/>
+            <point key="canvasLocation" x="3593" y="37"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="v11-io-yFu">
@@ -375,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMy-RQ-WVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4527" y="-1029"/>
+            <point key="canvasLocation" x="3593" y="-688"/>
         </scene>
         <!--Movie Page Container View Controller-->
         <scene sceneID="rfU-nH-IZu">
@@ -413,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKL-kQ-k57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="37"/>
+            <point key="canvasLocation" x="1985" y="37"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="ZRp-VL-1Rw">
@@ -424,7 +424,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc0-AB-vCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3489" y="36"/>
+            <point key="canvasLocation" x="2726" y="37"/>
         </scene>
     </scenes>
     <resources>

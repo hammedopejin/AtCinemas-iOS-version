@@ -16,6 +16,7 @@ class WebViewController: UIViewController {
     
     var trailer: Trailer!
     var webView = WKWebView()
+    var webURL: String?
     
     override func loadView() {
         super.loadView()
@@ -40,12 +41,16 @@ class WebViewController: UIViewController {
     }
     
     private func setupWeb() {
-        
+        var urlString: String = String()
         activityIndicator.startAnimating()
         loadingView.layer.cornerRadius = 25
         webView.navigationDelegate = self
         
-        let urlString = MovieAPI.getTrailerVideoURL(trailer.key)
+        if webURL != nil {
+            urlString = webURL!
+        } else {
+            urlString = MovieAPI.getTrailerVideoURL(trailer.key)
+        }
         
         guard let finalUrl = URL(string: urlString) else {
             return

@@ -7,11 +7,6 @@ target 'AtCinemas-iOS' do
 
   # Pods for AtCinemas-iOS
 
-  	pod 'Firebase/Core'
-	pod 'Firebase/Database'
-	pod 'GoogleSignIn'
-	pod 'Firebase/Auth'
-
   target 'AtCinemas-iOSTests' do
     inherit! :search_paths
     # Pods for testing

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class SettingsViewController: UIViewController {
     
@@ -76,20 +75,18 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        if indexPath.section == 0 && indexPath.row == 1 {
-           
-        }
-        
-        if indexPath.section == 0 && indexPath.row == 2 {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let webVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            webVC.webURL = Constants.Urls.terms_Conditions.rawValue
             
+            navigationController?.pushViewController(webVC, animated: true)
         }
         
-        if indexPath.section == 1 && indexPath.row == 0 {
-
-        }
-        
-        if indexPath.section == 1 && indexPath.row == 1 {
-
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let webVC = UIStoryboard(name: "Movies", bundle: Bundle.main).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            webVC.webURL = Constants.Urls.privacyPolicy.rawValue
+            
+            navigationController?.pushViewController(webVC, animated: true)
         }
         
     }

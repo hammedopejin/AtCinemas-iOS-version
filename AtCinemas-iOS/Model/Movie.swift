@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import FirebaseDatabase
 
 struct MovieResults: Decodable {
     let results: [Movie]
@@ -43,25 +42,6 @@ class Movie: Decodable {
         self.imageUrl = imageUrl
         self.rating = rating
         self.releaseDate = releaseDate
-    }
-    
-    init?(snapshot: DataSnapshot) {
-        
-        guard let value = snapshot.value as? [String : Any] else {
-            return nil
-        }
-        
-        let stringId = value[Constants.Movie.id.rawValue] as! String
-        
-        self.id = Int64(stringId)!
-        self.title = value[Constants.Movie.title.rawValue] as! String
-        self.overview = value[Constants.Movie.overview.rawValue] as! String
-        self.imageUrl = value[Constants.Movie.imageUrl.rawValue] as! String
-        
-        let stringRating = value[Constants.Movie.rating.rawValue] as! String
-        self.rating = Double(stringRating)!
-        
-        self.releaseDate = value[Constants.Movie.releaseDate.rawValue] as! String
     }
 
 }
