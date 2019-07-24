@@ -16,20 +16,6 @@ class MovieViewController: UIViewController {
     let movieViewModel = MovieViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     var by = Constants.Keys.nowPlaying.rawValue
-    
-    override func loadView() {
-        super.loadView()
-        
-        if Auth.auth().currentUser != nil {
-            if var controllers = tabBarController?.viewControllers {
-                let tabItem = UITabBarItem(title: "Cart", image: UIImage(named: "cart"), selectedImage: nil)
-                let cartVC = CartViewController()
-                cartVC.tabBarItem = tabItem
-                controllers.append(cartVC)
-                tabBarController?.setViewControllers(controllers, animated: true)
-            }
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
