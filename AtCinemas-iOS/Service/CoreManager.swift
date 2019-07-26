@@ -44,7 +44,6 @@ final class CoreManager {
         coreMovie.setValue(movie.rating, forKey: Constants.Movie.rating.rawValue)
         coreMovie.setValue(movie.releaseDate, forKey: Constants.Movie.releaseDate.rawValue)
         
-        print("Saved Movie: \(movie.title)")
         saveContext()
         
     }
@@ -63,7 +62,6 @@ final class CoreManager {
             return movies
             
         } catch {
-            print("Couldn't Fetch Objects: \(error.localizedDescription)")
             return []
         }
         
@@ -78,7 +76,6 @@ final class CoreManager {
             let toDeleteMovie = movieData[0] as NSManagedObject
             context.delete(toDeleteMovie)
             saveContext()
-            print("Deleted Book: \(movie.title) from Favorite")
         } catch {
             print("Error Deleting Book: \(error.localizedDescription)")
         }

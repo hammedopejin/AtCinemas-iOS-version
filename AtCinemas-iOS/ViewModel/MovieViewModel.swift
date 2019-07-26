@@ -58,7 +58,6 @@ class MovieViewModel {
                 self.isRequesting = false
                 return
             }
-            print("No of movies returned \(movies.count)")
             
             self.isRequesting = false
             if flag {
@@ -66,8 +65,6 @@ class MovieViewModel {
             } else {
                 self.movies.append(contentsOf: movies)
             }
-            
-            print("Total No of movies: \(self.movies.count)")
             
         }
     }
@@ -80,7 +77,6 @@ class MovieViewModel {
                 return
             }
             self.reviews = reviews
-            print("No of reviews returned \(reviews.count)")
             
         }
     }
@@ -93,7 +89,6 @@ class MovieViewModel {
                 return
             }
             self.trailers = trailers
-            print("No of trailers returned \(trailers.count)")
             
         }
     }
