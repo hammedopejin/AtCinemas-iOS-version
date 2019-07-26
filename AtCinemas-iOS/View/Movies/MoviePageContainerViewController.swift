@@ -63,7 +63,6 @@ class MoviePageContainerViewController: UIViewController {
         viewModel.getReviews(id: "\(self.movies[self.currentIndex].id)")
         viewModel.getTrailers(id: "\(self.movies[self.currentIndex].id)")
         
-        NotificationCenter.default.addObserver(self, selector: #selector(checkAndRemoveShareBotton), name: Notification.Name.TrailerNotification, object: nil)
     }
     
     @objc func saveMovie() {
@@ -74,13 +73,12 @@ class MoviePageContainerViewController: UIViewController {
         flag = flag ? false : true
     }
     
-    @objc func checkAndRemoveShareBotton() {
-        if self.viewModel.trailers.isEmpty{
-            _ = navigationItem.rightBarButtonItems?.popLast()
-        }
-    }
-    
     @objc func shareMovieTrailer() {
+        
+        if viewModel.trailers.count < 1 {
+            showAlert(title: "No Trailer!", message: "No trailer to share for the movie!")
+            return
+        }
         
         let firstActivityItem = "Check this movie trailer out: "
         let secondActivityItem : NSURL = NSURL(string: MovieAPI.getTrailerVideoURL(self.viewModel.trailers[0].key))!
